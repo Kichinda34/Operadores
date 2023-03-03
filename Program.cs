@@ -1,25 +1,53 @@
-﻿using System.Reflection.Metadata.Ecma335;
+﻿double num1, num2;
+int opcao = 0;
 
-internal class Program
+void Menu()
 {
-    private static void Main(string[] args)
-    {
-        int n1, n2;
-        Console.WriteLine("Insira dois numeros: ");
-        n1 = int.Parse(Console.ReadLine());
-        n2 = int.Parse(Console.ReadLine());
+    Console.Clear();
+    Console.WriteLine("1 - Somar");
+    Console.WriteLine("2 - Subtrair");
+    Console.WriteLine("3 - Multiplicar");
+    Console.WriteLine("4 - Dividir");
+    Console.WriteLine("5 - Sair");
+    Console.WriteLine("Escolha uma opção: ");
+    opcao = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("O valor da soma de: " + n1 +" + " + n2 + " = " +(n1 + n2));
-        Console.WriteLine("O valor da subtração de: " + n1 + " - " + n2 + " = " + (n1 - n2));
-        Console.WriteLine("O valor da multiplicação de: " + n1 + " * " + n2 + " = " + (n1 * n2));
-        
-        if (n1 == 0)
-        {
-            Console.WriteLine("Não é possível divisão por 0");
-        }
-        else
-        {
-            Console.WriteLine("O valor da divisão de: " + n1 + " / " + n2 + " = " + (n1 / n2));
-        }
+    switch (opcao)
+    {
+        default:
+            Console.WriteLine("Opção Inválida!");
+            Console.ReadLine();
+            break;
+
+        case 1: Console.WriteLine("A soma dos números é: "+(num1+num2));
+                Console.ReadLine();
+            break;
+        case 2:
+            Console.WriteLine("A Subtração dos números é: "+ (num1-num2));
+            Console.ReadLine();
+            break;
+        case 3:
+            Console.WriteLine("A multiplicação dos números é: " + (num1 * num2));
+            Console.ReadLine();
+            break;
+        case 4:
+            Console.WriteLine("A soma dos números é: " + (num1 / num2));
+            Console.ReadLine();
+            break;
+        case 5:
+            Console.WriteLine("Volte sempre!");
+            break;
     }
+
+}
+
+Console.WriteLine("Informe o primeiro numero: ");
+num1 = double.Parse(Console.ReadLine());
+
+Console.WriteLine("Informe o segundo numero: ");
+num2 = double.Parse(Console.ReadLine());
+
+while (opcao != 5)
+{
+    Menu();
 }
